@@ -56,8 +56,8 @@
             width: 100%;
             min-height: 100vh;
             display: flex;
-            align-items: center;
-            background: url(7.png) no-repeat;
+            align-items: flex-start;  /* تغيير من center إلى flex-start لرفع المحتوى للأعلى */
+            background: url(8.jpg) no-repeat;
             background-size: cover;
             background-position: center right;
             background-attachment: fixed;
@@ -262,6 +262,7 @@
                 background-size: cover;
                 background-attachment: scroll;
                 padding: 100px 20px;
+                align-items: flex-start;  /* رفع المحتوى للأعلى */
             }
 
             .main h2{
@@ -297,6 +298,8 @@
                 background-position: 78% center;
                 background-size: cover;
                 background-attachment: scroll;
+                align-items: flex-start;  /* رفع المحتوى للأعلى */
+                padding-top: 100px;  /* مسافة من الأعلى */
             }
 
             .main h2{
@@ -441,7 +444,7 @@
     <footer>
         <p class="footer-title">© 2026 <span> Mohamed Redjam.</span> All Rights Reserved.</p>
         <div class="social-icons">
-            <a href="https://www.linkedin.com/in/mohamed-redjam-bb2280409"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
             <a href="https://github.com/mohamedredjam-red" target="_blank"><i class="fab fa-github"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="https://www.instagram.com/mo.coder.dev/" target="_blank"><i class="fab fa-instagram"></i></a>
