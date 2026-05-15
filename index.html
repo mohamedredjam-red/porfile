@@ -239,82 +239,110 @@
 
         /* ================= MEDIA ================= */
 
-       /* ================= 1. شاشات الحاسوب (أقل من 1024px وأكبر من 768px) ================= */
-        @media (max-width: 1024px) {
-            header, section {
-                padding: 10px 100px; /* تقليل المسافة من 200px إلى 100px */
-            }
-            .main {
-                background-position: 80% center; /* إزاحة الصورة قليلاً لليمين */
-            }
-        }
+        @media (max-width:1023px){
 
-        /* ================= 2. شاشات التابلت (أقل من 768px وأكبر من 480px) ================= */
-        @media (max-width: 768px) {
-            header, section {
-                padding: 10px 50px; /* تقليل المسافة إلى 50px لترك مساحة للمحتوى */
+            header{
+                padding: 12px 20px;
             }
-            .main {
-                background-position: 85% center;
-                /* إضافة تدرج لوني خلف النص لضمان وضوحه فوق الخلفية */
-                background-image: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, transparent 100%), url(8.jpg);
-            }
-            .main h2 span {
-                font-size: 2.2em;
-            }
-        }
 
-        /* ================= 3. الهواتف المتوسطة (أقل من 641px) ================= */
-        /* هذه هي الميديا التي كنت تسأل عنها */
-        @media (max-width: 641px) {
-            header, section {
-                padding: 10px 30px; 
+            .navigation a{
+                padding-left:10px;
             }
-            .main {
-                background-position: 90% center; /* إزاحة الصورة أكثر لليمين ليبقى وجهك بعيداً عن النص */
-                padding-top: 120px;
-            }
-            .main h3 {
-                font-size: 1.2em;
-                max-width: 250px; /* نحدد عرض النص لكي لا يمتد ويغطي وجهك */
-            }
-        }
 
-        /* ================= 4. الهواتف الصغيرة (أقل من 480px) ================= */
-        @media (max-width: 480px) {
-            header, section {
-                padding: 10px 20px; 
-            }
-            .main {
-                background-position: 95% center;
-                /* تدرج لوني أقوى لأن المساحة ضيقة جداً */
-                background-image: linear-gradient(90deg, rgba(0,0,0,0.8) 20%, transparent 100%), url(8.jpg);
-            }
-            .main h2 span {
+            .title{
                 font-size: 1.8em;
             }
-            .social-icons a {
+
+            section{
+                padding: 80px 20px;
+            }
+
+            .main{
+                background-position: 75% center;
+                background-size: cover;
+                background-attachment: scroll;
+                padding: 100px 20px;
+                align-items: flex-start;  /* رفع المحتوى للأعلى */
+            }
+
+            .main h2{
+                font-size: 1.1em;
+            }
+
+            .main h2 span{
+                font-size: 2.5em;
+            }
+
+            .main h3{
+                font-size: 1.5em;
+            }
+
+            .social-icons a{
+                font-size: 1.5em;
                 padding-right: 20px;
-                font-size: 1.3em;
+            }
+
+            .content{
+                flex-direction: column;
+                align-items: center;
             }
         }
 
-        /* ================= 5. الهواتف الصغيرة جداً (حتى 200px) ================= */
-        @media (max-width: 300px) {
-            header, section {
-                padding: 10px 10px; 
+        @media (max-width:641px){
+
+            body{
+                font-size: 12px;
             }
-            .logo {
-                font-size: 1.3em;
+
+            .main{
+                background-position: 78% center;
+                background-size: cover;
+                background-attachment: scroll;
+                align-items: flex-start;  /* رفع المحتوى للأعلى */
+                padding-top: 100px;  /* مسافة من الأعلى */
             }
-            .navigation a {
-                font-size: 0.8em;
-                padding-left: 5px;
+
+            .main h2{
+                font-size: 1em;
             }
-            .main h2 span {
-                font-size: 1.5em;
+
+            .main h2 span{
+                font-size: 2em;
+            }
+
+            .main h3{
+                font-size: 1.2em;
+            }
+
+            .main-btn{
+                padding: 0.8em 1.8em;
+                font-size: 1em;
+            }
+
+            .card{
+                width: 100%;
+                max-width: 320px;
+            }
+
+            .project-card{
+                width: 100%;
+            }
+
+            footer{
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
             }
         }
+
+        @media (max-width:300px){
+
+            body{
+                font-size: 10px;
+            }
+
+        }
+
     </style>
 </head>
 <body>
