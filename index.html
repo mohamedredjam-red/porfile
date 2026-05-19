@@ -52,15 +52,35 @@
             padding: 100px 200px;
         }
 
-        .main{
+        .main {
             width: 100%;
             min-height: 100vh;
             display: flex;
-            align-items: flex-start;  /* تغيير من center إلى flex-start لرفع المحتوى للأعلى */
-            background: url(8.jpg) no-repeat;
-            background-size: cover;
-            background-position: center right;
-            background-attachment: fixed;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #0E1B2C;
+            position: relative;
+            padding: 100px 30px 100px 200px;
+        }
+
+        /* المحتوى النصي */
+        .main .main-content {
+            flex: 1;
+            max-width: 60%;
+        }
+
+        /* حاوية الصورة */
+        .image-profile {
+            position: relative;
+            flex-shrink: 0;
+            margin-right: 0;
+        }
+
+        .image-profile img {
+            height: 400px;
+            width: auto;
+            object-fit: cover;
+            display: block;
         }
 
         .main h2{
@@ -237,49 +257,82 @@
             justify-content: space-between;
         }
 
-        /* ================= MEDIA ================= */
+        /* ================= MEDIA QUERIES ================= */
 
-        @media (max-width:1023px){
+        /* للأجهزة اللوحية والمتوسطة (1023px وما دون) */
+       /* =========================
+   RESPONSIVE MEDIA QUERIES
+========================= */
+
+/* Tablets */
+        @media (max-width: 1024px){
 
             header{
-                padding: 12px 20px;
-            }
-
-            .navigation a{
-                padding-left:10px;
-            }
-
-            .title{
-                font-size: 1.8em;
+                padding: 15px 40px;
             }
 
             section{
-                padding: 80px 20px;
+                padding: 80px 40px;
             }
 
             .main{
-                background-position: 75% center;
-                background-size: cover;
-                background-attachment: scroll;
-                padding: 100px 20px;
-                align-items: flex-start;  /* رفع المحتوى للأعلى */
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+
+                padding: 110px 25px 60px;
+                gap: 20px;
+            }
+
+            /* الصورة فوق */
+            .image-profile{
+                order: -1;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+            }
+
+            .image-profile img{
+                width: 320px;
+                max-width: 85%;
+                height: auto;
+                object-fit: contain;
+            }
+
+            /* النص تحت */
+            .main .main-content{
+                max-width: 100%;
+                width: 100%;
             }
 
             .main h2{
-                font-size: 1.1em;
+                font-size: 1.3em;
+                line-height: 1.5;
             }
 
             .main h2 span{
-                font-size: 2.5em;
+                font-size: 3em;
+                line-height: 1.2;
             }
 
             .main h3{
                 font-size: 1.5em;
+                line-height: 1.6;
+                margin-bottom: 25px;
+            }
+
+            .social-icons{
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 18px;
             }
 
             .social-icons a{
-                font-size: 1.5em;
-                padding-right: 20px;
+                padding-right: 0;
+                font-size: 1.6em;
             }
 
             .content{
@@ -288,18 +341,92 @@
             }
         }
 
-        @media (max-width:641px){
+        /* Large phones */
+        @media (max-width: 768px){
 
-            body{
-                font-size: 12px;
+            header{
+                padding: 12px 20px;
+            }
+
+            .logo{
+                font-size: 1.5em;
+            }
+
+            .navigation a{
+                font-size: 1em;
+                padding-left: 15px;
             }
 
             .main{
-                background-position: 78% center;
-                background-size: cover;
-                background-attachment: scroll;
-                align-items: flex-start;  /* رفع المحتوى للأعلى */
-                padding-top: 100px;  /* مسافة من الأعلى */
+                padding: 95px 20px 50px;
+                gap: 18px;
+            }
+
+            .image-profile img{
+                width: 260px;
+                max-width: 82%;
+            }
+
+            .main h2{
+                font-size: 1.15em;
+            }
+
+            .main h2 span{
+                font-size: 2.4em;
+            }
+
+            .main h3{
+                font-size: 1.3em;
+                margin-bottom: 22px;
+            }
+
+            .main-btn{
+                font-size: 1em;
+                padding: 0.8em 1.8em;
+            }
+
+            .social-icons a{
+                font-size: 1.45em;
+            }
+
+            .card{
+                width: 100%;
+                max-width: 340px;
+            }
+
+            .project-card{
+                width: 100%;
+            }
+        }
+
+        /* Medium phones */
+        @media (max-width: 550px){
+
+            body{
+                font-size: 13px;
+            }
+
+            header{
+                padding: 10px 15px;
+            }
+
+            .navigation a{
+                padding-left: 10px;
+                font-size: 0.9em;
+            }
+
+            .main{
+                padding: 85px 15px 45px;
+                gap: 15px;
+            }
+
+            .image-profile{
+                margin-top: 5px;
+            }
+
+            .image-profile img{
+                width: 220px;
+                max-width: 80%;
             }
 
             .main h2{
@@ -311,37 +438,102 @@
             }
 
             .main h3{
-                font-size: 1.2em;
+                font-size: 1.15em;
+                line-height: 1.5;
             }
 
             .main-btn{
-                padding: 0.8em 1.8em;
-                font-size: 1em;
+                font-size: 0.95em;
+                padding: 0.75em 1.6em;
             }
 
-            .card{
-                width: 100%;
-                max-width: 320px;
+            .social-icons{
+                gap: 15px;
             }
 
-            .project-card{
-                width: 100%;
+            .social-icons a{
+                font-size: 1.3em;
             }
 
             footer{
                 flex-direction: column;
-                gap: 20px;
                 text-align: center;
+                gap: 20px;
             }
         }
 
-        @media (max-width:300px){
+        /* Small phones */
+        @media (max-width: 430px){
 
-            body{
-                font-size: 10px;
+            .main{
+                padding: 80px 12px 40px;
             }
 
+            .image-profile img{
+                width: 190px;
+                max-width: 75%;
+            }
+
+            .main h2{
+                font-size: 0.95em;
+            }
+
+            .main h2 span{
+                font-size: 1.7em;
+            }
+
+            .main h3{
+                font-size: 1em;
+            }
+
+            .main-btn{
+                font-size: 0.9em;
+                padding: 0.7em 1.4em;
+            }
+
+            .social-icons a{
+                font-size: 1.2em;
+            }
         }
+
+        /* Very small devices */
+        @media (max-width: 330px){
+
+            .logo{
+                font-size: 1.2em;
+            }
+
+            .navigation a{
+                font-size: 0.75em;
+                padding-left: 6px;
+            }
+
+            .main{
+                padding: 75px 10px 35px;
+            }
+
+            .image-profile img{
+                width: 150px;
+                max-width: 70%;
+            }
+
+            .main h2 span{
+                font-size: 1.4em;
+            }
+
+            .main h3{
+                font-size: 0.9em;
+            }
+
+            .social-icons{
+                gap: 10px;
+            }
+
+            .social-icons a{
+                font-size: 1.05em;
+            }
+        }
+
 
     </style>
 </head>
@@ -356,7 +548,7 @@
     </header>
 
     <section class="main">
-        <div>
+        <div class="main-content">
             <h2>hello I am Mohamed<br><span>Web developer</span></h2>
             <h3>Websites built using code <br> professionally</h3>
             <a href="#projects" class="main-btn">view my works</a>
@@ -367,7 +559,11 @@
                 <a href="https://www.instagram.com/mo.coder.dev/" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
+        <div class="image-profile">
+            <img src="3.jpg" alt="Mohamed Redjam">
+        </div>
     </section>
+
     <section class="cards" id="Services">
         <h2 class="title">Services</h2>
         <div class="content">
@@ -400,12 +596,13 @@
             </div>
         </div>
     </section>
+
     <section class="projects" id="projects">
         <h2 class="title">Projects</h2>
         <div class="content">
             <div class="project-card">
                 <div class="project-image">
-                    <img src="9.png" alt="">
+                    <img src="9.png" alt="Learning English Platform">
                 </div>
                 <div class="project-info">
                     <p class="project-category">Web Site</p>
@@ -413,11 +610,11 @@
                         <span>Learning English <br> Platform</span>
                         <a class="more-details" href="https://mohamedredjam-red.github.io/learning-english/" target="_blank">view more</a>
                     </strong>
-
                 </div>
             </div>
         </div>
     </section>
+
     <section class="cards contact" id="contact">
         <h2 class="title">Let's work together</h2>
         <div class="content">
@@ -441,6 +638,7 @@
             </div>
         </div>
     </section>
+
     <footer>
         <p class="footer-title">© 2026 <span> Mohamed Redjam.</span> All Rights Reserved.</p>
         <div class="social-icons">
